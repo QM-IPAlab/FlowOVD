@@ -66,8 +66,8 @@
             </div>
 
             <div class="is-size-5 publication-authors">
-              <span><sup>1</sup>Queen Mary University of London, UK</span>
-              <span><sup>2</sup>École Polytechnique Fédérale de Lausanne (EPFL), Switzerland</span>
+              <sup>1</sup>Queen Mary University of London, UK<br>
+              <sup>2</sup>École Polytechnique Fédérale de Lausanne (EPFL), Switzerland
             </div>
 
             <br>
@@ -139,16 +139,22 @@
     <div class="columns is-centered">
       <div class="column is-full">
         <div class="content">
-          <h2 class="title is-3">Proposed method</h2>
+          <h2 class="title is-3">Method</h2>
           <div class="level-set has-text-justified">
             <p>
-              We propose to tackle the referring expression comprehension task using an MLLM in a 2-stage process. (1) Grounded description is generated for the input image using an MLLM. Each line contains a pair of object description and bounding box coordinates. (2) We use the VQA and captioning capability of the MLLM to refine the predicted bounding box in a process named Chain-of-Caption.
+              We presented <b>FlowOVD</b>, a generative framework for OVD that reformulates decoder query initialization as a continuous, text-conditioned transport process in latent space. By learning a rectified flow from static text-agnostic queries to semantically aligned query representations, our method produces more diverse and expressive object queries for OVD. 
             </p>
           </div>
         </div>
         <div class="columns is-centered">
-          <img src="static/images/coc.jpg" alt="Robot setup" width="100%" class="center-image"/>
+          <img src="static/images/flowovd.png" alt="Robot setup" width="100%" class="center-image"/>
         </div>
+
+        <div class="content has-text-justified" style="margin-bottom: 2rem;">
+            <p>
+              (a) <b>Overall framework.</b> Given an image and a text prompt, a vision-language encoder extracts visual features and textual features. In the latent space, we present a query flow that transforms a set of text-agnostic queries into text-conditioned queries. The refined queries are then consumed by the transformer decoder to produce final predictions. (b) <b>Query Flow.</b> First, a set-level matching is performed between source queries and target queries. Intermediate states are obtained via linear interpolation. A velocity field is trained to learn the transport dynamics with conditions. The final queries are obtained by integrating the learned flow, resulting in more diverse and text-aligned query representations.
+            </p>
+          </div>
       </div>
   </div>
 </section>
