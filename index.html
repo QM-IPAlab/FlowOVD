@@ -124,7 +124,7 @@
 
         <div class="content has-text-justified" style="margin-bottom: 2rem;">
           <p>
-            We model query initialization as a continuous, text-conditioned flow in latent space, transporting text-agnostic queries to text-guided queries, leading to more diverse and expressive open-vocabulary detection and better efficiency with fewer decoder layers.
+            We reformulate decoder query generation as a continuous transport process in latent space, introducing a generative perspective for OVD and moving beyond conventional discrete query construction strategies.
           </p>
         </div>
         
@@ -142,7 +142,7 @@
           <h2 class="title is-3">Method</h2>
           <div class="level-set has-text-justified">
             <p>
-              We presented <b>FlowOVD</b>, a generative framework for OVD that reformulates decoder query initialization as a continuous, text-conditioned transport process in latent space. By learning a rectified flow from static text-agnostic queries to semantically aligned query representations, our method produces more diverse and expressive object queries for OVD. 
+              We presented <b>FlowOVD</b>, a generative framework for OVD task. Inspired by rectified flow matching, we introduce a text-conditioned query flow, which progressively transforms text-agnostic queries into semantically aligned query representations and can be seamlessly integrated into existing Transformer-based detectors.
             </p>
           </div>
         </div>
@@ -168,15 +168,15 @@
           <h2 class="title is-3">Results</h2>
           <div class="level-set has-text-justified">
             <p>
-              Our proposed method Chain-of-Caption improves the prediction accuracy especially at high IoU thresholds, predicting bounding boxes that fits better to the target. Legend: <span style="display:inline-block; width:16px; height:16px; background-color:blue;"></span> - Groundtruth bounding box, <span style="display:inline-block; width:16px; height:16px; background-color:green;"></span> - Predicted bounding box
+              Extensive experiments on COCO and LVIS show that our approach consistently improves open-vocabulary detection performance and achieves better efficiency with fewer decoder layers. 
             </p>
           </div>
         </div>
         <div class="columns is-centered">
-          <img src="static/images/vis1.jpg" alt="Robot setup" width="100%" class="center-image"/>
+          <img src="static/images/vis1.png" alt="Robot setup" width="100%" class="center-image"/>
         </div>
         <div class="columns is-centered">
-          <img src="static/images/vis2.jpg" alt="Robot setup" width="100%" class="center-image"/>
+          <img src="static/images/vis2.png" alt="Robot setup" width="100%" class="center-image"/>
         </div>
       </div>
   </div>
