@@ -124,7 +124,7 @@
 
         <div class="content has-text-justified" style="margin-bottom: 2rem;">
           <p>
-            We reformulate decoder query generation as a continuous transport process in latent space, introducing a generative perspective for OVD and moving beyond conventional discrete query construction strategies.
+            Traditionally, OVD is formulated as a discriminative prediction task through a Transformer encoder-decoder architecture. By introducing a generative perspective, we attempt to moving beyond conventional discrete query construction strategies. In contrast, our method obtains more diverse and expressive open-vocabulary detection and better efficiency with fewer decoder layers. 
           </p>
         </div>
         
@@ -142,7 +142,7 @@
           <h2 class="title is-3">Method</h2>
           <div class="level-set has-text-justified">
             <p>
-              We presented <b>FlowOVD</b>, a generative framework for OVD task. Inspired by rectified flow matching, we introduce a text-conditioned query flow, which progressively transforms text-agnostic queries into semantically aligned query representations and can be seamlessly integrated into existing Transformer-based detectors.
+              We presented <b>FlowOVD</b>, a novel OVD approach that reformulates query initialization as a continuous generative process in the latent space. We propose a text-conditioned query flow that transforms an initial set of text-agnostic queries into a text-guided distribution. Specifically, we adopt a rectified flow formulation to model a time-dependent velocity field that transports queries under language conditioning. This enables controllable, and diverse query generation while remaining fully compatible with existing Transformer-based detectors.
             </p>
           </div>
         </div>
