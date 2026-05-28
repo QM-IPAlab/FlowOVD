@@ -106,7 +106,7 @@
 </section>
 
 <!-- Teaser -->
-  <section class="hero teaser">
+  <!-- <section class="hero teaser">
     <div class="container">
       <div class="hero-body">
         <div>
@@ -117,7 +117,7 @@
         </h2>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- End teaser -->
 
   <section class="hero section is-small">
@@ -127,7 +127,7 @@
         <div>
           <img src="static/images/teaser.png" alt="" width="100%" class="center-image"/>
         </div>
-        <h2 class="subtitle has-text-centered">
+        <h2 class="subtitle has-text-left">
          Traditionally, OVD is formulated as a discriminative prediction task through a Transformer encoder-decoder architecture. By introducing a generative perspective, we attempt to move beyond conventional discrete query construction strategies.
         </h2>
           </div>
@@ -169,7 +169,7 @@
     <div class="columns is-centered">
       <div class="column is-full">
         <div class="content">
-          <h2 class="title is-3">Method</h2>
+          <h2 class="title is-3">Overview</h2>
           <div class="level-set has-text-justified">
             <p>
               We presented <b>FlowOVD</b>, a novel OVD approach that reformulates query initialization as a continuous generative process in the latent space. We propose a text-conditioned query flow that transforms an initial set of text-agnostic queries into a text-guided distribution. Specifically, we adopt a rectified flow formulation to model a time-dependent velocity field that transports queries under language conditioning. This enables controllable, and diverse query generation while remaining fully compatible with existing Transformer-based detectors.
@@ -180,7 +180,7 @@
           <img src="static/images/flowovd.png" alt="" width="100%" class="center-image"/>
         </div>
 
-        <h2 class="subtitle has-text-centered">
+        <h2 class="subtitle has-text-left">
           (a) <b>Overall framework.</b> Given an image and a text prompt, a vision-language encoder extracts visual features and textual features. In the latent space, we present a query flow that transforms a set of text-agnostic queries into text-conditioned queries. The refined queries are then consumed by the transformer decoder to produce final predictions. (b) <b>Query Flow.</b> First, a set-level matching is performed between source queries and target queries. Intermediate states are obtained via linear interpolation. A velocity field is trained to learn the transport dynamics with conditions. The final queries are obtained by integrating the learned flow, resulting in more diverse and text-aligned query representations.
         </h2>
           </div>
@@ -194,7 +194,7 @@
     <div class="columns is-centered">
       <div class="column is-full">
         <div class="content">
-          <h2 class="title is-3">Results</h2>
+          <h2 class="title is-3">Result</h2>
           <div class="level-set has-text-justified">
             <p>
               Extensive experiments on COCO and LVIS show that our FlowOVD consistently improves open-vocabulary detection performance and achieves better efficiency with fewer decoder layers. 
