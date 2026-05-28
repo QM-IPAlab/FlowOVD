@@ -56,19 +56,19 @@
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="https://weiyao1996.github.io/" target="_blank">Yao Wei</a>,</span>
-                  <span class="author-block">
-                    <a href="https://people.epfl.ch/andrea.cavallaro" target="_blank">Andrea Cavallaro</a>,</span>
-                      <span class="author-block">
-                        <a href="https://cj-oh.github.io/" target="_blank">Changjae Oh</a>
-                  </span>
-                  </div>
+                <a href="https://weiyao1996.github.io/" target="_blank">Yao Wei</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://people.epfl.ch/andrea.cavallaro" target="_blank">Andrea Cavallaro</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://cj-oh.github.io/" target="_blank">Changjae Oh</a><sup>1</sup>
+              </span>
+            </div>
 
-                  <div class="is-size-5 publication-authors">
-                    <span class="author-block">Queen Mary University of London</span>
-                    <span class="author-block">EPFL</span>
-                    <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
-                  </div>
+            <div class="is-size-5 publication-authors">
+              Queen Mary University of London, UK<sup>1</sup><br>
+              EPFL, Switzerland<sup>2</sup>
+            </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
@@ -110,7 +110,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Open-vocabulary object detection (OVD) has achieved remarkable progress through large-scale vision-language pre-training. Existing methods, however, typically formulate OVD as a discriminative prediction problem, where decoder queries are either static or initialized from encoder features, thus limiting their diversity and flexibility. In this paper, we introduce a generative perspective by modeling decoder query generation as a continuous transport process in latent space. We propose FlowOVD, a text-conditioned query generation framework based on rectified flow that progressively transforms text-agnostic queries into text-guided queries. By introducing continuous latent query dynamics into a vision-language model (VLM) based detector, our method avoids heuristic discrete query construction and enables more expressive semantic alignment for open-vocabulary detection. Without requiring additional training data, FlowOVD achieves 49.5 AP on COCO and 31.5 AP on LVIS, outperforming GroundingDINO by +1.2 AP (+2.5 \%) and +4.1 AP (+15.0 \%), respectively. The larger gain on the challenging long-tailed LVIS benchmark further highlights the effectiveness of continuous query generation for open-vocabulary generalization.
+            Open-vocabulary object detection (OVD) has achieved remarkable progress through large-scale vision-language pre-training. Existing methods, however, typically formulate OVD as a discriminative prediction problem, where decoder queries are either static or initialized from encoder features, thus limiting their diversity and flexibility. In this paper, we introduce a generative perspective by modeling decoder query generation as a continuous transport process in latent space. We propose FlowOVD, a text-conditioned query generation framework based on rectified flow that progressively transforms text-agnostic queries into text-guided queries. By introducing continuous latent query dynamics into a vision-language model (VLM) based detector, our method avoids heuristic discrete query construction and enables more expressive semantic alignment for open-vocabulary detection. Without requiring additional training data, FlowOVD achieves 49.5 AP on COCO and 31.5 AP on LVIS, outperforming GroundingDINO by +1.2 AP (+2.5 %) and +4.1 AP (+15.0 %), respectively. The larger gain on the challenging long-tailed LVIS benchmark further highlights the effectiveness of continuous query generation for open-vocabulary generalization.
           </p>
         </div>
       <div>
