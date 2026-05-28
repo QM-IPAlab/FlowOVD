@@ -137,11 +137,11 @@
           <img src="static/images/teaser.png" alt="" width="100%" class="center-image"/>
         </div> -->
 
-        <div class="content has-text-justified" style="margin-bottom: 2rem;">
+        <!-- <div class="content has-text-justified" style="margin-bottom: 2rem;">
           <p>
             Traditionally, OVD is formulated as a discriminative prediction task through a Transformer encoder-decoder architecture. By introducing a generative perspective, we attempt to moving beyond conventional discrete query construction strategies.
           </p>
-        </div>
+        </div> -->
         
       </div>
     </div>
@@ -165,10 +165,9 @@
           <img src="static/images/flowovd.png" alt="" width="100%" class="center-image"/>
         </div>
 
-        <div class="content has-text-justified" style="margin-bottom: 2rem;">
-            <p>
-              (a) <b>Overall framework.</b> Given an image and a text prompt, a vision-language encoder extracts visual features and textual features. In the latent space, we present a query flow that transforms a set of text-agnostic queries into text-conditioned queries. The refined queries are then consumed by the transformer decoder to produce final predictions. (b) <b>Query Flow.</b> First, a set-level matching is performed between source queries and target queries. Intermediate states are obtained via linear interpolation. A velocity field is trained to learn the transport dynamics with conditions. The final queries are obtained by integrating the learned flow, resulting in more diverse and text-aligned query representations.
-            </p>
+        <h2 class="subtitle has-text-centered">
+          (a) <b>Overall framework.</b> Given an image and a text prompt, a vision-language encoder extracts visual features and textual features. In the latent space, we present a query flow that transforms a set of text-agnostic queries into text-conditioned queries. The refined queries are then consumed by the transformer decoder to produce final predictions. (b) <b>Query Flow.</b> First, a set-level matching is performed between source queries and target queries. Intermediate states are obtained via linear interpolation. A velocity field is trained to learn the transport dynamics with conditions. The final queries are obtained by integrating the learned flow, resulting in more diverse and text-aligned query representations.
+        </h2>
           </div>
       </div>
   </div>
