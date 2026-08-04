@@ -58,7 +58,7 @@ Coming soon ;)
   # Suppose you download the Objects365 raw file and put them on datas/o365/raw, extract the tared files and reorder them.
   cd datas/o365/raw
   tar -xvf Objects365_v1.tar.gz
-  cd 2019-08-02
+  cd Objects365_v1/2019-08-02
   for file in *.zip; do unzip -o "$file"; done
   mv *.json $root_dir/datas/o365/annotations
   mv train val test $root_dir/datas/o365
