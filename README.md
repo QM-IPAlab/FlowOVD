@@ -24,7 +24,7 @@ Coming soon ;)
   ```
 
 #### COCO-ReM
-* COCO-ReM is hosted on Huggingface Datasets at [@kdexd/coco-rem]([https://cocodataset.org/#download](https://huggingface.co/datasets/kdexd/coco-rem)). Download the annotation files:
+* COCO-ReM is hosted on Huggingface Datasets at [@kdexd/coco-rem](https://huggingface.co/datasets/kdexd/coco-rem). Download the annotation files:
   ```bash
   cd $root_dir
   mkdir -p datas/coco-rem
