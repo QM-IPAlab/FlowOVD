@@ -39,7 +39,7 @@ Coming soon ;)
 * Download LVIS annotation files:
   ```bash
   cd $root_dir
-  mkdir -p datas/lvis
+  mkdir -p datas/lvis/annotations
   wget https://huggingface.co/hao9610/OV-DINO/resolve/main/lvis_v1_minival_inserted_image_name.json -O datas/lvis/annotations/lvis_v1_minival_inserted_image_name.json
   wget https://huggingface.co/hao9610/OV-DINO/resolve/main/lvis_v1_val_inserted_image_name.json -O datas/lvis/annotations/lvis_v1_val_inserted_image_name.json
   ```
