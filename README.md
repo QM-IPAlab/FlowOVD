@@ -23,6 +23,18 @@ Coming soon ;)
   rm datas/coco/train2017.zip datas/coco/val2017.zip datas/coco/annotations_trainval2017.zip
   ```
 
+#### COCO-ReM
+* COCO-ReM is hosted on Huggingface Datasets at [@kdexd/coco-rem]([https://cocodataset.org/#download](https://huggingface.co/datasets/kdexd/coco-rem)). Download the annotation files:
+  ```bash
+  cd $root_dir
+  mkdir -p datas/coco-rem
+  cd datas/coco-rem
+  for name in trainrem valrem; do
+    wget https://huggingface.co/datasets/kdexd/coco-rem/resolve/main/instances_$name.json.zip
+    unzip instances_$name.json.zip
+  done
+  ```
+
 #### LVIS
 * Download LVIS annotation files:
   ```bash
