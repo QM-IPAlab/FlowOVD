@@ -3,7 +3,7 @@ Coming soon ;)
 
 ## :checkered_flag: Getting Started
 
-### Data Preparation
+### 1. Data Preparation
 
 #### COCO
 * Download [COCO](https://cocodataset.org/#download) from the official website, and put them on datas/coco folder.
