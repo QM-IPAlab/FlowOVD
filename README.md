@@ -62,3 +62,37 @@ Coming soon ;)
   for file in *.zip; do unzip -o "$file"; done
   mv *.json $root_dir/datas/o365/annotations
   mv train val test $root_dir/datas/o365
+  ```
+
+### 2. Environment Setup
+
+#### Conda: Install Miniforge
+ ```bash
+  cd $HOME
+  curl --location --remote-name "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh" 
+  bash Miniforge3-$(uname)-$(uname -m).sh 
+  rm Miniforge3-$(uname)-$(uname -m).sh
+  ```
+#### Install the required dependencies
+* Create conda environment
+ ```bash
+  source ~/miniforge3/bin/activate
+  conda create -n flowovd python=3.9 -y
+  ```
+* Compile C++/CUDA via interactive compute node
+```bash
+  srun -N 1 --gpus 1 --pty bash
+  conda create -n flowovd python=3.9 -y
+  module load gcc-native/12.3
+  module load cuda/12.6
+  conda activate flowovd
+  pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+  ```
+* Install the dependencies
+```bash
+  pip install -r requirements.txt 
+  cd models/GroundingDINO/ops
+  python setup.py build install
+  python test.py
+  cd ../../..
+  ```
