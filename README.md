@@ -82,7 +82,6 @@ Coming soon ;)
 * Compile C++/CUDA via interactive compute node
 ```bash
   srun -N 1 --gpus 1 --pty bash
-  conda create -n flowovd python=3.9 -y
   module load gcc-native/12.3
   module load cuda/12.6
   conda activate flowovd
