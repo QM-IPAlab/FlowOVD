@@ -68,7 +68,7 @@ Coming soon ;)
 ### 2. Environment Setup
 
 #### Conda: Install Miniforge
- ```bash
+  ```bash
   cd $HOME
   curl --location --remote-name "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh" 
   bash Miniforge3-$(uname)-$(uname -m).sh 
@@ -76,12 +76,12 @@ Coming soon ;)
   ```
 #### Install the required dependencies
 * Create conda environment
- ```bash
+  ```bash
   source ~/miniforge3/bin/activate
   conda create -n flowovd python=3.9 -y
   ```
 * Compile C++/CUDA via interactive compute node
-```bash
+  ```bash
   srun -N 1 --gpus 1 --pty bash
   module load gcc-native/12.3
   module load cuda/12.6
@@ -89,7 +89,7 @@ Coming soon ;)
   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
   ```
 * Install the dependencies
-```bash
+  ```bash
   pip install -r requirements.txt 
   cd models/GroundingDINO/ops
   python setup.py build install
