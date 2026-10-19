@@ -64,19 +64,28 @@ Coming soon ;)
   mv *.json $root_dir/datas/o365/annotations
   mv train val test $root_dir/datas/o365
   ```
-* Refer to the [OpenDataLab](https://opendatalab.com/OpenDataLab/Objects365/cli/main) for downloading Objects365V2.
+* Refer to the [OpenDataLab](https://opendatalab.com/OpenDataLab/Objects365/cli/main) for downloading Objects365V2. Alternatively, 
   ```bash
   cd $root_dir
-  mkdir -p datas/o365v2/annotations
-  mkdir -p datas/o365v2/extracted
-  # Suppose you download the raw file and put them on datas/o365v2, extract the tared files and reorder them.
-  cd datas/o365v2/OpenDataLab___Objects365/raw
-  cat Objects365.tar.gz.000{0,1,2,3} | tar -xz -C $root_dir/datas/o365v2/extracted
-  xxxx
-  cd Objects365_v1/2019-08-02
-  for file in *.zip; do unzip -o "$file"; done
-  mv *.json $root_dir/datas/o365/annotations
-  mv train val test $root_dir/datas/o365
+  mkdir -p datas/o365v2 && cd datas/o365v2
+  base_url=https://dorc.ks3-cn-beijing.ksyun.com/data-set/2020Objects365%E6%95%B0%E6%8D%AE%E9%9B%86
+  mkdir annotations && cd annotations
+  wget \
+      ${base_url}/train/zhiyuan_objv2_train.tar.gz \
+      ${base_url}/val/zhiyuan_objv2_val.json
+  tar -zxf *.tar.gz
+  cd .. 
+  mkdir train && cd train
+  wget ${base_url}/train/patch{0..50}.tar.gz
+  for f in *.tar.gz; do echo ${f}; tar -zxf ${f}; done
+  cd ..
+  mkdir val && cd val
+  wget \
+      ${base_url}/val/images/v1/patch{0..15}.tar.gz \
+      ${base_url}/val/images/v2/patch{16..43}.tar.gz
+  for f in *.tar.gz; do echo ${f}; tar -zxf ${f}; done
+  cd ..
+  cd ../..
   ```
 
 ### 2. Environment Setup
