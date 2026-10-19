@@ -56,7 +56,7 @@ Coming soon ;)
   cd $root_dir
   mkdir -p datas/o365/annotations
   mkdir -p datas/o365/raw
-  # Suppose you download the Objects365 raw file and put them on datas/o365/raw, extract the tared files and reorder them.
+  # Suppose you download the raw file and put them on datas/o365/raw, extract the tared files and reorder them.
   cd datas/o365/raw
   tar -xvf Objects365_v1.tar.gz
   cd Objects365_v1/2019-08-02
@@ -69,7 +69,7 @@ Coming soon ;)
   cd $root_dir
   mkdir -p datas/o365v2/annotations
   mkdir -p datas/o365v2/extracted
-  # Suppose you download the Objects365 raw file and put them on datas/o365v2, extract the tared files and reorder them.
+  # Suppose you download the raw file and put them on datas/o365v2, extract the tared files and reorder them.
   cd datas/o365v2/OpenDataLab___Objects365/raw
   cat Objects365.tar.gz.000{0,1,2,3} | tar -xz -C $root_dir/datas/o365v2/extracted
   xxxx
