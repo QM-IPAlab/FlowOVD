@@ -96,7 +96,7 @@ Coming soon ;)
   cd ${repo}
   python v3det_exemplar_image_download.py
   python v3det_image_download.py
-  python v3det_text_image_download.py
+  python v3det_test_image_download.py
   cd ..
   mkdir v3det & cd v3det
   ln -s ${PWD}/../${repo}/V3Det/images
