@@ -87,6 +87,12 @@ Coming soon ;)
   cd ..
   cd ../..
   ```
+#### V3Det
+* Download
+  ```bash
+  cd $root_dir
+  mkdir -p datas/v3det
+  ```
 
 ### 2. Environment Setup
 
