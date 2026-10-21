@@ -50,6 +50,20 @@ Coming soon ;)
   ln -s $(realpath datas/coco/val2017) datas/lvis
   ```
 
+#### ODinW
+* Download ODinW-35 :
+  ```bash
+  cd $root_dir
+  mkdir -p datas/odinw && cd datas/odinw
+  url=https://huggingface.co
+  curl -s ${url}/api/models/GLIPModel/GLIP/tree/main/odinw_35 |
+      jq -r '.[] | select(.type == "file") | .path' |
+      sed 's#^odinw_35/##' |
+      xargs -I{} -P4 wget ${url}/GLIPModel/GLIP/resolve/main/odinw_35/{}
+  for f in *.zip; do unzip ${f}; done
+  rm *.zip
+  ```
+
 #### Objects365
 * Refer to the [OpenDataLab](https://opendatalab.com/OpenDataLab/Objects365_v1/cli/main) for downloading Objects365V1.
   ```bash
