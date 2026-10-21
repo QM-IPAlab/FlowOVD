@@ -51,7 +51,7 @@ Coming soon ;)
   ```
 
 #### ODinW
-* Download ODinW-35 :
+* Download ODinW-35.
   ```bash
   cd $root_dir
   mkdir -p datas/odinw && cd datas/odinw
