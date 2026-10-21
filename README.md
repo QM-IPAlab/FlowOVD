@@ -78,14 +78,15 @@ Coming soon ;)
   mkdir train && cd train
   wget ${base_url}/train/patch{0..50}.tar.gz
   for f in *.tar.gz; do echo ${f}; tar -zxf ${f}; done
+  rm *.tar.gz
   cd ..
   mkdir val && cd val
   wget \
       ${base_url}/val/images/v1/patch{0..15}.tar.gz \
       ${base_url}/val/images/v2/patch{16..43}.tar.gz
   for f in *.tar.gz; do echo ${f}; tar -zxf ${f}; done
+  rm *.tar.gz
   cd ..
-  cd ../..
   ```
 #### V3Det
 * Download
