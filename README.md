@@ -5,6 +5,65 @@ Coming soon ;)
 
 ### 1. Data Preparation
 
+#### Objects365
+* Refer to the [OpenDataLab](https://opendatalab.com/OpenDataLab/Objects365_v1/cli/main) for downloading Objects365V1.
+  ```bash
+  cd $root_dir
+  mkdir -p datas/o365/annotations
+  mkdir -p datas/o365/raw && cd datas/o365/raw
+  # Suppose you download the raw file and put them on datas/o365/raw, extract the tared files and reorder them.
+  tar -xvf Objects365_v1.tar.gz
+  cd Objects365_v1/2019-08-02
+  for file in *.zip; do unzip -o "$file"; done
+  mv *.json $root_dir/datas/o365/annotations
+  mv train val test $root_dir/datas/o365
+  ```
+* Refer to the [OpenDataLab](https://opendatalab.com/OpenDataLab/Objects365/cli/main) for downloading Objects365V2. Alternatively, 
+  ```bash
+  cd $root_dir
+  mkdir -p datas/o365v2 && cd datas/o365v2
+  base_url=https://dorc.ks3-cn-beijing.ksyun.com/data-set/2020Objects365%E6%95%B0%E6%8D%AE%E9%9B%86
+  mkdir annotations && cd annotations
+  wget \
+      ${base_url}/train/zhiyuan_objv2_train.tar.gz \
+      ${base_url}/val/zhiyuan_objv2_val.json
+  tar -zxf *.tar.gz
+  cd .. 
+  mkdir train && cd train
+  wget ${base_url}/train/patch{0..50}.tar.gz
+  for f in *.tar.gz; do echo ${f}; tar -zxf ${f}; done
+  rm *.tar.gz
+  cd ..
+  mkdir val && cd val
+  wget \
+      ${base_url}/val/images/v1/patch{0..15}.tar.gz \
+      ${base_url}/val/images/v2/patch{16..43}.tar.gz
+  for f in *.tar.gz; do echo ${f}; tar -zxf ${f}; done
+  rm *.tar.gz
+  cd ..
+  ```
+#### V3Det
+* Refer to the [OpenDataLab](https://opendatalab.com/V3Det/V3Det/cli/main) for downloading V3Det.
+  ```bash
+  cd $root_dir
+  mkdir -p datas/v3det && cd datas/v3det
+  # Suppose you download the raw file
+  cd $root_dir/datas
+  repo=V3Det_Backup
+  git clone https://huggingface.co/datasets/yhcao/${repo}.git
+  cd ${repo}
+  python v3det_exemplar_image_download.py
+  python v3det_image_download.py
+  python v3det_test_image_download.py
+  cd ..
+  mkdir v3det & cd v3det
+  ln -s ${PWD}/../${repo}/V3Det/images
+  mkdir annotations && cd annotations
+  ln -s ${PWD}/../../${repo}/category_name_13204_v3det_2023_v1.txt
+  ln -s ${PWD}/../../${repo}/*.json .
+  cd .. 
+  ```
+
 #### COCO
 * Download [COCO](https://cocodataset.org/#download) from the official website, and put them on datas/coco folder.
   ```bash
@@ -62,62 +121,6 @@ Coming soon ;)
       xargs -I{} -P4 wget ${url}/GLIPModel/GLIP/resolve/main/odinw_35/{}
   for f in *.zip; do unzip ${f}; done
   rm *.zip
-  ```
-
-#### Objects365
-* Refer to the [OpenDataLab](https://opendatalab.com/OpenDataLab/Objects365_v1/cli/main) for downloading Objects365V1.
-  ```bash
-  cd $root_dir
-  mkdir -p datas/o365/annotations
-  mkdir -p datas/o365/raw && cd datas/o365/raw
-  # Suppose you download the raw file and put them on datas/o365/raw, extract the tared files and reorder them.
-  tar -xvf Objects365_v1.tar.gz
-  cd Objects365_v1/2019-08-02
-  for file in *.zip; do unzip -o "$file"; done
-  mv *.json $root_dir/datas/o365/annotations
-  mv train val test $root_dir/datas/o365
-  ```
-* Refer to the [OpenDataLab](https://opendatalab.com/OpenDataLab/Objects365/cli/main) for downloading Objects365V2. Alternatively, 
-  ```bash
-  cd $root_dir
-  mkdir -p datas/o365v2 && cd datas/o365v2
-  base_url=https://dorc.ks3-cn-beijing.ksyun.com/data-set/2020Objects365%E6%95%B0%E6%8D%AE%E9%9B%86
-  mkdir annotations && cd annotations
-  wget \
-      ${base_url}/train/zhiyuan_objv2_train.tar.gz \
-      ${base_url}/val/zhiyuan_objv2_val.json
-  tar -zxf *.tar.gz
-  cd .. 
-  mkdir train && cd train
-  wget ${base_url}/train/patch{0..50}.tar.gz
-  for f in *.tar.gz; do echo ${f}; tar -zxf ${f}; done
-  rm *.tar.gz
-  cd ..
-  mkdir val && cd val
-  wget \
-      ${base_url}/val/images/v1/patch{0..15}.tar.gz \
-      ${base_url}/val/images/v2/patch{16..43}.tar.gz
-  for f in *.tar.gz; do echo ${f}; tar -zxf ${f}; done
-  rm *.tar.gz
-  cd ..
-  ```
-#### V3Det
-* Download
-  ```bash
-  cd $root_dir/datas
-  repo=V3Det_Backup
-  git clone https://huggingface.co/datasets/yhcao/${repo}.git
-  cd ${repo}
-  python v3det_exemplar_image_download.py
-  python v3det_image_download.py
-  python v3det_test_image_download.py
-  cd ..
-  mkdir v3det & cd v3det
-  ln -s ${PWD}/../${repo}/V3Det/images
-  mkdir annotations && cd annotations
-  ln -s ${PWD}/../../${repo}/category_name_13204_v3det_2023_v1.txt
-  ln -s ${PWD}/../../${repo}/*.json .
-  cd .. 
   ```
 
 ### 2. Environment Setup
