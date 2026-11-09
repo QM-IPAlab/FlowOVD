@@ -9,9 +9,8 @@ Coming soon ;)
 * Refer to the [OpenDataLab](https://opendatalab.com/OpenDataLab/Objects365_v1/cli/main) for downloading Objects365V1.
   ```bash
   cd $root_dir
-  mkdir -p datas/o365/annotations
-  mkdir -p datas/o365/raw && cd datas/o365/raw
-  # Suppose you download the raw file and put them on datas/o365/raw, extract the tared files and reorder them.
+  mkdir -p datas/o365/annotations && cd datas/o365
+  # Suppose you download the raw file, extract the tared files and reorder them.
   tar -xvf Objects365_v1.tar.gz
   cd Objects365_v1/2019-08-02
   for file in *.zip; do unzip -o "$file"; done
@@ -46,22 +45,12 @@ Coming soon ;)
 * Refer to the [OpenDataLab](https://opendatalab.com/V3Det/V3Det/cli/main) for downloading V3Det.
   ```bash
   cd $root_dir
-  mkdir -p datas/v3det && cd datas/v3det
+  mkdir -p datas/v3det/annotations && cd datas/v3det
   # Suppose you download the raw file
-  cd $root_dir/datas
-  repo=V3Det_Backup
-  git clone https://huggingface.co/datasets/yhcao/${repo}.git
-  cd ${repo}
-  python v3det_exemplar_image_download.py
+  cd V3Det___V3Det/raw
+  mv *.json $root_dir/datas/v3det/annotations
   python v3det_image_download.py
-  python v3det_test_image_download.py
-  cd ..
-  mkdir v3det & cd v3det
-  ln -s ${PWD}/../${repo}/V3Det/images
-  mkdir annotations && cd annotations
-  ln -s ${PWD}/../../${repo}/category_name_13204_v3det_2023_v1.txt
-  ln -s ${PWD}/../../${repo}/*.json .
-  cd .. 
+  mv V3Det/images $root_dir/datas/v3det
   ```
 
 #### COCO
